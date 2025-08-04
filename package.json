@@ -1,0 +1,20 @@
+{
+  "name": "next-nacos",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "从 Nacos 同步配置到 Next.js 项目的工具",
+  "main": "src/cli.js",
+  "bin": {
+    "next-nacos": "src/cli.js"
+  },
+  "keywords": [
+    "nextjs",
+    "nacos",
+    "config"
+  ],
+  "author": "Chen Zhang",
+  "license": "MIT",
+  "dependencies": {
+    "nacos": "^2.0.0"
+  }
+}
