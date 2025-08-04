@@ -26,5 +26,12 @@
     "jest-environment-node": "^30.0.5",
     "ts-jest": "^29.4.1",
     "typescript": "^5.9.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:zhangchen21/next-nacos.git"
+  },
+  "bugs": {
+    "url": "https://github.com/zhangchen21/next-nacos/issues"
   }
 }
