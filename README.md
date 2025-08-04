@@ -1,87 +1,97 @@
 # next-nacos
 
-从 Nacos 配置中心同步配置到 Next.js 项目的命令行工具。
+A command-line tool to sync configurations from Nacos configuration center to Next.js projects.
 
-## 简介
+## Introduction
 
-`next-nacos` 是一个便捷的命令行工具，用于将 Nacos 配置中心的配置同步到 Next.js 项目的 `.env` 文件中，以便同时在客户端组件和服务端组件中便捷地使用这些配置。
+`next-nacos` is a convenient command-line tool that synchronizes configurations from the Nacos configuration center to the `.env` file of a Next.js project, making it easy to use these configurations in both client-side and server-side components.
 
-## 安装
-### 全局安装
+# Global Installation
+```bash
 npm install -g next-nacos
+```
 
-### 或作为项目依赖安装
+# Or Install as a Project Dependency
+```bash
 npm install next-nacos --save-dev
+```
 
-## 使用方法
+## Usage
 
-1. 在项目根目录创建配置文件 `.nextnacos.js`
+1. Create a configuration file `.nextnacos.js` in the root directory of the project.
 
-2. 执行命令同步配置：
+2. Execute the command to sync configurations:
    ```bash
-   # 全局安装时
+   # When installed globally
    next-nacos
    
-   # 项目依赖安装时
+   # When installed as a project dependency
    npx next-nacos
    
-   # 或在 package.json 的 scripts 中添加命令后执行
+   # Or execute after adding the command to the scripts in package.json
    npm run sync-config
    ```
 
-## 配置文件
+## Configuration File
 
-在项目根目录创建 `.nextnacos.js` 文件，示例内容：
+Create a `.nextnacos.js` file in the root directory of the project. Example content:
+```javascript
 module.exports = function defineConfig() {
   return {
-    // Nacos 服务地址
+    // Nacos server address
     serverAddr: 'localhost:8848',
-    // 配置 ID
+    // Configuration ID
     dataId: 'next-app-config',
-    // 配置分组
+    // Configuration group
     group: 'DEFAULT_GROUP',
-    // 可选：命名空间
+    // Optional: Namespace
     namespace: 'your-namespace-id',
-    // 可选：用户名
+    // Optional: Username
     username: 'nacos',
-    // 可选：密码
+    // Optional: Password
     password: 'nacos'
   };
 };
+```
 
-### 配置项说明
-有效配置项即是 nacos 配置项：
+## Configuration File
+### Configuration Item Description
+Valid configuration items are Nacos configuration items:
 
-| 配置项 | 类型 | 说明 | 是否必填 |
+| Configuration Item | Type | Description | Required |
 |--------|------|------|----------|
-| serverAddr | string | Nacos 服务地址，格式为 `host:port` | 是 |
-| dataId | string | 要获取的配置 ID | 是 |
-| group | string | 配置所属的分组 | 是 |
-| namespace | string | 配置所属的命名空间 ID | 否 |
-| username | string | 访问 Nacos 的用户名 | 否 |
-| password | string | 访问 Nacos 的密码 | 否 |
-| requestTimeout | number | 请求超时时间（毫秒），默认 6000 | 否 |
+| serverAddr | string | Nacos server address, in the format `host:port` | Yes |
+| dataId | string | The configuration ID to obtain | Yes |
+| group | string | The group to which the configuration belongs | Yes |
+| namespace | string | The namespace ID to which the configuration belongs | No |
+| username | string | Username for accessing Nacos | No |
+| password | string | Password for accessing Nacos | No |
+| requestTimeout | number | Request timeout in milliseconds, default 6000 | No |
 
-## 在 Next.js 中使用配置
+## Using Configurations in Next.js
 
-配置同步后，会在项目根目录生成 `.env` 文件，内容格式如下：
+After configuration synchronization, a `.env` file will be generated in the root directory of the project with the following content format:
+```
 NEXT_PUBLIC_NACOS='{"key":"value",...}'
-在 Next.js 项目中，可以通过 `process.env.NEXT_PUBLIC_NACOS` 访问配置：
-// 在页面或组件中使用
+```
+In a Next.js project, you can access the configuration via `process.env.NEXT_PUBLIC_NACOS`:
+```javascript
+// Use in pages or components
 const AppConfig = JSON.parse(process.env.NEXT_PUBLIC_NACOS || '{}');
 
 console.log(AppConfig.apiUrl);
+```
 
-### 集成到项目流程
+## Integrating into Project Workflow
 
-1. 安装依赖
+1. Install dependencies
    ```bash
    npm install next-nacos --save-dev
    ```
 
-2. 创建配置文件 `.nextnacos.js`
+2. Create the configuration file `.nextnacos.js`
 
-3. 在 `package.json` 中添加脚本：
+3. Add scripts to `package.json`:
    ```json
    {
      "scripts": {
@@ -92,14 +102,15 @@ console.log(AppConfig.apiUrl);
    }
    ```
 
-4. 运行开发环境：
+4. Run the development environment:
    ```bash
    npm run dev
    ```
 
-## 测试
-### 运行测试
+# Running Tests
+```bash
 npm test
+```
 
-### 许可证
+## License
 MIT

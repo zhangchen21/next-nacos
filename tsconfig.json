@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
-    "allowJs": true,          // 允许编译 JS 文件
-    "esModuleInterop": true,  // 解决模块互操作问题
-    "module": "ESNext",       // 匹配 ESM 模块系统
+    "allowJs": true,
+    "esModuleInterop": true,
+    "module": "ESNext",
     "moduleResolution": "Node",
     "target": "ESNext",
     "skipLibCheck": true

@@ -8,11 +8,10 @@ export default {
     '^.+\\.js$': [
       'ts-jest',
       {
-        tsconfig: 'tsconfig.json' // 将 ts-jest 配置移到这里
+        tsconfig: 'tsconfig.json'
       }
     ]
   },
   collectCoverage: true,
   coverageDirectory: 'coverage'
-  // 移除原来的 globals 配置
 };
