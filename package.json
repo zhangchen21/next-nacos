@@ -7,6 +7,9 @@
   "bin": {
     "next-nacos": "src/cli.js"
   },
+  "scripts": {
+    "test": "jest"
+  },
   "keywords": [
     "nextjs",
     "nacos",
@@ -16,5 +19,12 @@
   "license": "MIT",
   "dependencies": {
     "nacos": "^2.0.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "jest": "^30.0.5",
+    "jest-environment-node": "^30.0.5",
+    "ts-jest": "^29.4.1",
+    "typescript": "^5.9.2"
   }
 }

@@ -6,5 +6,5 @@ loadUserConfig()
     fetchNacosAndWrite(config);
   })
   .catch((e) => {
-    console.error(`❌[next-nacos] ${e.message}`);
+    console.error(e.message);
   });

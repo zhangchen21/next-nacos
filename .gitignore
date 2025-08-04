@@ -1,2 +1,4 @@
 node_modules
 .nextnacos.js
+.env
+coverage

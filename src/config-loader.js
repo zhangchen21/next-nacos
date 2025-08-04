@@ -8,7 +8,7 @@ export async function loadUserConfig() {
   if (existsSync(rcPathJs)) {
     rcPath = rcPathJs;
   } else {
-    throw new Error('❌[next-nacos] .nextnacos.js does not exist in the current directory');
+    throw new Error('❌ [next-nacos] .nextnacos.js does not exist in the current directory');
   }
 
   const fileUrl = new URL(`file://${rcPath}`);
@@ -16,7 +16,7 @@ export async function loadUserConfig() {
   const defineConfig = configModule.default;
 
   if (typeof defineConfig !== 'function') {
-    throw new Error('❌[next-nacos] defineConfig should be a function');
+    throw new Error('❌ [next-nacos] defineConfig should be a function');
   }
 
   const config = defineConfig();

@@ -7,10 +7,10 @@
 `next-nacos` 是一个便捷的命令行工具，用于将 Nacos 配置中心的配置同步到 Next.js 项目的 `.env` 文件中，以便同时在客户端组件和服务端组件中便捷地使用这些配置。
 
 ## 安装
-# 全局安装
+### 全局安装
 npm install -g next-nacos
 
-# 或作为项目依赖安装
+### 或作为项目依赖安装
 npm install next-nacos --save-dev
 
 ## 使用方法
@@ -72,7 +72,7 @@ const AppConfig = JSON.parse(process.env.NEXT_PUBLIC_NACOS || '{}');
 
 console.log(AppConfig.apiUrl);
 
-## 集成到项目流程
+### 集成到项目流程
 
 1. 安装依赖
    ```bash
@@ -98,8 +98,8 @@ console.log(AppConfig.apiUrl);
    ```
 
 ## 测试
-# 运行测试
+### 运行测试
 npm test
 
-## 许可证
+### 许可证
 MIT
